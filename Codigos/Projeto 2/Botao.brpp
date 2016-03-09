@@ -1,0 +1,18 @@
+//Projeto 2 – Ligar luz com botão
+
+Constante Numero pinoLed = 13;
+Constante Numero  botao = 2;
+
+Configuracao(){
+	Pino.definirModo(pinoLed, Saida);
+	Pino.definirModo(botao, Entrada);
+}
+
+Principal(){
+	Numero estadoBotao = Pino.ler(Digital.botao);
+	se (estadoBotao == Ligado){
+		Pino.escrever(Digital.pinoLed, Ligado);
+		esperar(1000);
+	}
+	Pino.escrever(Digital.pinoLed, Desligado);
+}
