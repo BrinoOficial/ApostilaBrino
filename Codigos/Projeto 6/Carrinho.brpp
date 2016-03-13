@@ -1,0 +1,30 @@
+//Projeto 6 – Carrinho com servo de rotacao continua
+
+usar Servo
+
+Servo servoD;
+Servo servoE;
+
+Configuracao(){
+	servoD.conectar(Digital.9);
+	servoE.conectar(Digital.10);
+}
+
+Principal(){
+Numero x = 0;
+	enquanto (x<3){
+		servoD.escreverMicros(Servo.frente);
+		servoE.escreverMicros(Servo.frente);
+		esperar(2000);
+		servoD.escreverMicros(Servo.frente);
+		servoE.escreverMicros(Servo.tras);
+		esperar(2000);
+		x++;
+	}
+	servoD.escreverMicros(Servo.tras);
+	servoE.escreverMicros(Servo.frente);
+	esperar(2000);
+	servoD.escreverMicros(Servo.tras);
+	servoE.escreverMicros(Servo.tras);
+	esperar(2000);
+}
