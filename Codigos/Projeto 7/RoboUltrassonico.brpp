@@ -1,0 +1,25 @@
+// Projeto 7 – Robo Ultrassonico
+
+usar Servo
+usar Ultra
+
+Ultra u(5,4);
+Servo servoD;
+Servo servoE;
+
+Configuracao(){
+	servoD.conectar(Digital.9);
+	servoE.conectar(Digital.10);
+}
+
+Principal(){
+	enquanto (u.medir() > 5){
+		//caso seus motores rotacionem para o lado errado, troque Servo.frente por Servo.tras
+		servoD.escreverMicros(Servo.frente);
+		servoE.escreverMicros(Servo.frente);
+	}
+	servoD.escreverMicros(Servo.frente);
+	servoE.escreverMicros(Servo.tras);
+	//o tempo de espera para uma curva de 90 graus pode variar
+	esperar(3000); 
+}

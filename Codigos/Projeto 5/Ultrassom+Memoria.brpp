@@ -1,0 +1,22 @@
+//Projeto 5 – Ultrassom + Memoria
+
+usar Ultra
+usar Memoria
+
+Ultra u(5,4);
+
+Configuracao(){
+	USB.conectar(9600);
+	para( Numero x = 0; x < 5; x++){
+		Numero d = u.medir();
+		Memoria.escrever(x, d);
+		USB.enviarln(d);
+	} 
+	para( Numero x = 0; x < 5; x++){
+		USB.enviarln(Memoria.ler(x));
+	} 
+}
+
+Principal(){
+
+}
