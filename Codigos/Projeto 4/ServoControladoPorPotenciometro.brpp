@@ -1,0 +1,19 @@
+//Projeto 4 – Servo Controlado por Potenciômetro 
+
+usar Servo	
+Servo meuServo;	
+
+Numero Constante Apotenciometro = 0;
+Numero valorPotenciometro;
+Numero angulo;
+
+Configuracao() {
+	meuServo.conectar(Digital.5);	
+}
+
+Principal(){
+	valorPotenciometro = Pino.ler(Apotenciometro); 
+	angulo = proporcionar(valorPotenciometro, 0, 1023, 0, 180); 
+	meuServo.escreverAngulo(angulo);	
+	esperar(15);
+}

@@ -1,0 +1,14 @@
+//Projeto 3 – Leitura Analógica Para USB
+
+Numero Constante ALDR = 0;
+Numero leitura;
+
+Configuracao() {
+USB.conectar(9600);
+}
+
+Principal() {
+leitura = Pino.ler(ALDR);
+USB.enviarln(leitura);
+esperar(500);
+}

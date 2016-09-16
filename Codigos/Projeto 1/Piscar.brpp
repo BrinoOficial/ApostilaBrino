@@ -3,12 +3,12 @@
 Numero pinoLed = 13; 
 
 Configuracao(){
-	Pino.definirModo(pinoLed, Saida);
+Pino.definirModo(pinoLed, Saida);
 }
 
 Principal(){
-	Pino.ligar(Digital.pinoLed); 
-	esperar(2000);
-	Pino.desligar(Digital.pinoLed);
-	esperar(2000);
+Pino.ligar(Digital.pinoLed); 
+esperar(2000);
+Pino.desligar(Digital.pinoLed);
+esperar(2000);
 }
